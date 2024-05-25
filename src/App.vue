@@ -6,39 +6,32 @@
         <f7-popover class="credits">
           <f7-block>
             <h3>Credits ❤️</h3>
-
             <p>
-              <f7-link href="https://github.com/atnbueno"
+              Glyph data sourced from
+              <f7-link href="https://github.com/OpenJelly/Open-Jellycore"
                        external
                        target="_blank">
-                @atnbueno
+                github.com/OpenJelly/Open-Jellycore
               </f7-link>
             </p>
-
             <p>
-              <f7-link href="https://github.com/actuallytaylor"
+              Icons rendered using
+              <f7-link href="https://github.com/atnbueno/shortcut-icons"
                        external
                        target="_blank">
-                @actuallytaylor
-              </f7-link>
-            </p>
-
-            <p>
-              <f7-link href="https://github.com/electrikmilk"
-                       external
-                       target="_blank">
-                @electrikmilk
-              </f7-link>
-            </p>
-
-            <p>
-              <f7-link href="https://github.com/chrisjmendez"
-                       external
-                       target="_blank">
-                @chrisjmendez
+                github.com/atnbueno/shortcut-icons
               </f7-link>
             </p>
           </f7-block>
+          <f7-list dividers>
+            <f7-list-item v-for="credit in githubCredits"
+                          :link="'https://github.com/'+credit"
+                          target="_blank"
+                          :style="'color:'+blue"
+                          external>
+              @{{ credit }}
+            </f7-list-item>
+          </f7-list>
         </f7-popover>
 
         <f7-navbar sliding>
@@ -184,6 +177,11 @@ export default {
         darkMode: 'auto',
       },
       glyphs: glyphs,
+      glyph: 'identifier',
+      colors: colors,
+      color: null,
+      colorName: null,
+      githubCredits: ['atnbueno', 'actuallytaylor', 'electrikmilk', 'chrisjmendez'],
     };
   },
   mounted() {
