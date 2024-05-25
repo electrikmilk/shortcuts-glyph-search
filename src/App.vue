@@ -145,6 +145,7 @@ import {
   f7NavTitle,
   f7NavTitleLarge,
   f7Page,
+  f7Popover,
   f7Searchbar,
   f7Subnavbar,
   f7Toolbar,
@@ -172,6 +173,7 @@ export default {
     f7BlockHeader,
     f7AccordionContent,
     f7Block,
+    f7Popover,
   },
   data() {
     return {
