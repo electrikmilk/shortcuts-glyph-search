@@ -121,7 +121,9 @@
 </template>
 
 <script>
-import * as glyphs from './assets/glyphs.json';
+import glyphs from './assets/glyphs.json';
+import colors from './assets/colors.json';
+
 import {
   f7,
   f7AccordionContent,
