@@ -23,9 +23,6 @@
             </f7-searchbar>
           </f7-subnavbar>
         </f7-navbar>
-        <f7-list strong inset class="searchbar-not-found">
-          <f7-list-item title="No glyphs found!"/>
-        </f7-list>
 
         <f7-list strong inset accordion-list>
           <f7-list-item title="How to Use" media-item accordion-item>
@@ -69,6 +66,10 @@
               </f7-block>
             </f7-accordion-content>
           </f7-list-item>
+        </f7-list>
+
+        <f7-list strong inset class="searchbar-not-found">
+          <f7-list-item title="No glyphs found!"/>
         </f7-list>
 
         <f7-list strong dividers inset media-list class="search-list searchbar-found">
