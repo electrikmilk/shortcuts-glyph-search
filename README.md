@@ -1,7 +1,9 @@
-# Vue 3 + Vite
+# Shortcuts Glyph Search
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Static site for searching for <a href="https://apps.apple.com/us/app/shortcuts/id1462947752" target="_blank" rel="noopener noreferrer">Siri Shortcuts</a> glyphs identifiers for use in a Shortcuts programming language like Cherri or Jelly.
 
-## Recommended IDE Setup
+## Dependencies
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+- [shortcut-icons](https://github.com/atnbueno/shortcut-icons)
+- Framework7 (Vue)
+- Vue
