@@ -1,0 +1,21 @@
+{
+    "name": "shortcuts-glyph-search",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "vue": "^3.4.21",
+        "framework7": "^8.3.3",
+        "framework7-icons": "^5.0.5"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.4",
+        "vite": "^5.2.0",
+        "framework7-vue": "^8.3.3"
+    }
+}
