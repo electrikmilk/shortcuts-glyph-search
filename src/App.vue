@@ -2,13 +2,49 @@
   <f7-app v-bind="f7params" theme="ios">
     <f7-view main>
       <f7-page>
+
+        <f7-popover class="credits">
+          <f7-block>
+            <h3>Credits ❤️</h3>
+
+            <p>
+              <f7-link href="https://github.com/atnbueno"
+                       external
+                       target="_blank">
+                @atnbueno
+              </f7-link>
+            </p>
+
+            <p>
+              <f7-link href="https://github.com/actuallytaylor"
+                       external
+                       target="_blank">
+                @actuallytaylor
+              </f7-link>
+            </p>
+
+            <p>
+              <f7-link href="https://github.com/electrikmilk"
+                       external
+                       target="_blank">
+                @electrikmilk
+              </f7-link>
+            </p>
+
+            <p>
+              <f7-link href="https://github.com/chrisjmendez"
+                       external
+                       target="_blank">
+                @chrisjmendez
+              </f7-link>
+            </p>
+          </f7-block>
+        </f7-popover>
+
         <f7-navbar sliding>
           <f7-nav-left>
             <f7-link icon-f7="info_circle"
-                     @click="alert(
-                         'Glyphs sourced from github.com/atnbueno/shortcut-icons\n\ngithub.com/OpenJelly/Open-Jellycore',
-                         'Credits ❤️'
-                     )"/>
+                     popover-open=".credits"/>
           </f7-nav-left>
           <f7-nav-title-large>
             {{ f7params.name }}
