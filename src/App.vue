@@ -145,7 +145,6 @@ export default {
         theme: 'ios',
         darkMode: 'auto',
       },
-      search: '',
       glyphs: glyphs,
     };
   },
