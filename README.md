@@ -2,6 +2,8 @@
 
 # Shortcuts Glyph Search
 
+[![Deploy to GitHub Pages](https://github.com/electrikmilk/shortcuts-glyph-search/actions/workflows/deploy.yml/badge.svg)](https://github.com/electrikmilk/shortcuts-glyph-search/actions/workflows/deploy.yml)
+
 Static site for searching for <a href="https://apps.apple.com/us/app/shortcuts/id1462947752" target="_blank" rel="noopener noreferrer">Siri Shortcuts</a>.
 
 ## Usage
