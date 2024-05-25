@@ -1,4 +1,4 @@
-![Screenshot 2024-05-24 at 15 53 27](https://github.com/electrikmilk/shortcuts-glyph-search/assets/4368524/ebd77542-61fa-49ae-b6a6-3d098b8eeb8a)
+![Shortcuts Glyph Search](https://github.com/electrikmilk/shortcuts-glyph-search/assets/4368524/ebd77542-61fa-49ae-b6a6-3d098b8eeb8a)
 
 # Shortcuts Glyph Search
 
