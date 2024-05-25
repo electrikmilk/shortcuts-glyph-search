@@ -17,8 +17,5 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "vite": "^5.2.0",
     "framework7-vue": "^8.3.3"
-  },
-  "resolutions": {
-    "rollup": "npm:@rollup/wasm-node"
   }
 }
