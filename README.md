@@ -8,7 +8,7 @@ Static site for searching for <a href="https://apps.apple.com/us/app/shortcuts/i
 
 Includes a How-to section on using the glyph identifiers in a Shortcuts programming language like Cherri or Jelly.
 
-![Screenshot 2024-05-25 at 12 31 44](https://github.com/electrikmilk/shortcuts-glyph-search/assets/4368524/f225dc54-c096-4ba5-ad0e-b1c8e1e660d7)
+![How to use section](https://github.com/electrikmilk/shortcuts-glyph-search/assets/4368524/f225dc54-c096-4ba5-ad0e-b1c8e1e660d7)
 
 ## Dependencies
 
