@@ -1,9 +1,17 @@
+![Screenshot 2024-05-24 at 15 53 27](https://github.com/electrikmilk/shortcuts-glyph-search/assets/4368524/ebd77542-61fa-49ae-b6a6-3d098b8eeb8a)
+
 # Shortcuts Glyph Search
 
-Static site for searching for <a href="https://apps.apple.com/us/app/shortcuts/id1462947752" target="_blank" rel="noopener noreferrer">Siri Shortcuts</a> glyphs identifiers for use in a Shortcuts programming language like Cherri or Jelly.
+Static site for searching for <a href="https://apps.apple.com/us/app/shortcuts/id1462947752" target="_blank" rel="noopener noreferrer">Siri Shortcuts</a>.
+
+## Usage
+
+Includes a How-to section on using the glyph identifiers in a Shortcuts programming language like Cherri or Jelly.
+
+![Screenshot 2024-05-25 at 12 31 44](https://github.com/electrikmilk/shortcuts-glyph-search/assets/4368524/f225dc54-c096-4ba5-ad0e-b1c8e1e660d7)
 
 ## Dependencies
 
 - [shortcut-icons](https://github.com/atnbueno/shortcut-icons)
-- Framework7 (Vue)
 - Vue
+- Framework7 (Vue)
