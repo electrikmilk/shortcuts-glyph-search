@@ -300,7 +300,7 @@ export default {
         case 'darkgray':
           return 'grayBlue';
         default:
-          return this.color.name;
+          return this.color.identifier;
       }
     },
   },
