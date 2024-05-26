@@ -30,11 +30,19 @@ code .token {
     .navbar {
         height: 13rem !important;
     }
+
+    .page-content {
+        padding-top: 7.5rem !important;
+    }
 }
 
 @media (max-width: 298px) {
     .navbar {
         height: 15rem !important;
+    }
+
+    .page-content {
+        padding-top: 8.5rem !important;
     }
 }
 
