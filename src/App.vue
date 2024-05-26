@@ -125,6 +125,8 @@
 
           <br/>
           <br/>
+          <br/>
+          <br/>
         </f7-page-content>
       </f7-page>
     </f7-view>
