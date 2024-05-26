@@ -1,4 +1,4 @@
-![Shortcuts Glyph Search](https://github.com/electrikmilk/shortcuts-glyph-search/assets/4368524/ebd77542-61fa-49ae-b6a6-3d098b8eeb8a)
+![Shortcuts Glyph Search](https://github.com/electrikmilk/shortcuts-glyph-search/assets/4368524/0a247185-216e-4083-b1b0-f61c623aa365)
 
 # Shortcuts Glyph Search
 
@@ -8,11 +8,11 @@ Static site for searching for <a href="https://apps.apple.com/us/app/shortcuts/i
 
 ## Usage
 
-Includes a How-to section on using the glyph identifiers in a Shortcuts programming language like Cherri or Jelly.
+Includes a How-to section on using the glyph and color identifiers in a Shortcuts programming language like Cherri or Jelly.
 
-![How to use section](https://github.com/electrikmilk/shortcuts-glyph-search/assets/4368524/f225dc54-c096-4ba5-ad0e-b1c8e1e660d7)
+![Code section](https://github.com/electrikmilk/shortcuts-glyph-search/assets/4368524/28fb2506-d11f-47f5-be73-5556382c6a80)
 
-## Support this glyph list
+## Support the glyph list
 
 The identifiers are listed in [glyphs.json](https://github.com/electrikmilk/shortcuts-glyph-search/blob/main/src/assets/glyphs.json). You could use a [online JSON tool](https://onlinejsontools.com/extract-json-keys) to extract a list of keys for your application.
 
