@@ -34,15 +34,27 @@
           </f7-list>
         </f7-popover>
 
-        <f7-navbar sliding>
-          <f7-nav-left>
+        <f7-navbar sliding class="text-align-center" style="padding-top: 5rem;height: 10rem">
+          <f7-nav-left style="z-index: 999">
             <f7-link icon-f7="info_circle"
                      popover-open=".credits"/>
           </f7-nav-left>
-          <f7-nav-title-large>
-            {{ f7params.name }}
-          </f7-nav-title-large>
-          <f7-nav-title :title="f7params.name"/>
+
+          <f7-nav-title style="position: fixed;left: 0;right: 0;margin: 1.5rem 0 auto">
+            <div style="all: initial">
+              <div class="shortcut-icon s86"
+                   style="position: relative"
+                   :class="iconClass(glyph.code)">
+              </div>
+              <div class="shortcut-icon-color-picker">
+                <div class="shortcut-icon-color"
+                     v-for="(n,c) in colors"
+                     @click="color = {identifier: c, code: n}"
+                     :class="'c'+n">
+                </div>
+              </div>
+            </div>
+          </f7-nav-title>
           <f7-subnavbar>
             <f7-searchbar search-container=".search-list"
                           class="searchbar"
@@ -53,68 +65,67 @@
           </f7-subnavbar>
         </f7-navbar>
 
-        <f7-list strong inset accordion-list>
-          <f7-list-item title="How to Use" media-item accordion-item>
-            <template #media>
-              <f7-icon f7="question_circle"
-                       size="24px"
-                       :color="blue"/>
-            </template>
-            <f7-accordion-content>
-              <f7-block>
-                <p class="margin-top margin-bottom" style="opacity: .5">
-                  <f7-icon f7="doc_on_clipboard_fill"
-                           size="1rem"/>
-                  Click one of the glyphs in the list below to copy the identifier to your clipboard.
-                </p>
-                <h3>
-                  <f7-link
-                      href="https://cherrilang.org"
-                      external
-                      target="_blank">
-                    Cherri
-                  </f7-link>
-                </h3>
-                <p>
-                  Set it as your Shortcut's icon in Cherri using a definition called <code>glyph</code>.
-                </p>
-                <pre>#define glyph identifier</pre>
-                <h3>
-                  <f7-link
-                      href="https://jellycuts.com"
-                      rel="noopener noreferrer"
-                      external
-                      target="_blank">
-                    Jelly
-                  </f7-link>
-                </h3>
-                <p>
-                  Set it as your Shortcut's icon in Jelly using <code>#Icon</code>.
-                </p>
-                <pre>#Icon: identifier</pre>
-              </f7-block>
-            </f7-accordion-content>
-          </f7-list-item>
-        </f7-list>
+        <f7-toolbar position="bottom" style="font-size: .8rem"
+                    :style="!color.identifier ? 'height: 9rem' : 'height: 11rem'">
+          <div v-for="(compiler, name) in compilers"
+               class="width-100"
+               style="display: flex;align-items: center;justify-content: center;gap: 1rem">
+            <f7-link
+                :href="compiler.url"
+                external
+                style="font-weight: 600;font-size: 1rem"
+                target="_blank">
+              {{ compiler.icon }} {{ name }}
+            </f7-link>
+            <code class="width-100 display-block">
+              <template v-if="glyph.identifier">
+                <template v-if="name === 'Cherri'"><span class="keyword">#define</span> <span class="token">glyph</span>
+                  {{ glyph.identifier }}
+                </template>
+                <template v-if="name === 'Jelly'"><span class="keyword">#Icon</span>: {{ glyph.identifier }}</template>
+              </template>
+              <template v-if="color.identifier">
+                <template v-if="name === 'Cherri'"><br/><span class="keyword">#define</span> <span
+                    class="token">color</span> {{ color.identifier }}
+                </template>
+                <template v-if="name === 'Jelly'"><br/><span class="keyword">#Color</span>: {{ jellyColorName() }}
+                </template>
+              </template>
+            </code>
+            <f7-button icon-f7="doc_on_clipboard_fill" icon-size="1.3rem"
+                       @click="copyToClipboard(compiler.code)"/>
+          </div>
+        </f7-toolbar>
 
-        <f7-list strong inset class="searchbar-not-found">
-          <f7-list-item title="No glyphs found!"/>
-        </f7-list>
+        <f7-page-content>
+          <f7-block-header>
+            <f7-icon f7="doc_on_clipboard_fill"
+                     size="1rem"/>
+            Choose one of the glyphs in the list below to copy the identifier and generate code.
+          </f7-block-header>
 
-        <f7-list strong dividers inset media-list class="search-list searchbar-found">
-          <template v-for="(n,g) in glyphs">
-            <template v-if="typeof n !== 'object'">
+          <f7-list strong inset class="searchbar-not-found">
+            <f7-list-item title="No glyphs found!"/>
+          </f7-list>
+
+          <f7-list strong dividers inset media-list class="search-list searchbar-found">
+            <template v-for="(n,g) in glyphs">
               <f7-list-item :title="glyphTitle(g)"
                             :text="g"
                             link="#"
-                            @click="copyToClipboard(g)">
+                            @click="copyToClipboard(g);glyph = {identifier: g, code: n}">
                 <template #media>
-                  <div class="shortcut-icon s43" :class="'g'+n"></div>
+                  <div class="shortcut-icon s43"
+                       :class="iconClass(n)">
+                  </div>
                 </template>
               </f7-list-item>
             </template>
-          </template>
-        </f7-list>
+          </f7-list>
+
+          <br/>
+          <br/>
+        </f7-page-content>
       </f7-page>
     </f7-view>
   </f7-app>
@@ -130,6 +141,7 @@ import {
   f7App,
   f7Block,
   f7BlockHeader,
+  f7Button,
   f7Icon,
   f7Link,
   f7List,
@@ -140,6 +152,7 @@ import {
   f7NavTitle,
   f7NavTitleLarge,
   f7Page,
+  f7PageContent,
   f7Popover,
   f7Searchbar,
   f7Subnavbar,
@@ -169,6 +182,8 @@ export default {
     f7AccordionContent,
     f7Block,
     f7Popover,
+    f7Button,
+    f7PageContent,
   },
   data() {
     return {
@@ -179,11 +194,21 @@ export default {
         darkMode: 'auto',
       },
       glyphs: glyphs,
-      glyph: 'identifier',
+      glyph: {identifier: 'identifier', code: null},
       colors: colors,
-      color: null,
-      colorName: null,
+      color: {name: null, code: null},
+      compilers: {
+        'Cherri': {
+          icon: '🍒',
+          url: 'https://cherrilang.org/',
+        },
+        'Jelly': {
+          icon: '🪼',
+          url: 'https://jellycuts.com/',
+        },
+      },
       githubCredits: ['atnbueno', 'actuallytaylor', 'electrikmilk', 'chrisjmendez'],
+      groups: [],
     };
   },
   mounted() {
@@ -195,7 +220,22 @@ export default {
     },
     copyToClipboard(text) {
       navigator.clipboard.writeText(text);
-      f7.dialog.alert(text, 'Copied to Clipboard!');
+      f7.toast.create({
+        icon: '<i class="f7-icons">doc_on_clipboard_fill</i>',
+        text: 'Copied to Clipboard',
+        position: 'center',
+        closeTimeout: 2000,
+      }).open();
+    },
+    iconClass(n) {
+      let classes = {};
+      classes[`g${n}`] = true;
+
+      if (this.color.code) {
+        classes[`c${this.color.code}`] = true;
+      }
+
+      return classes;
     },
     glyphTitle(g) {
       switch (g) {
@@ -238,6 +278,28 @@ export default {
       });
 
       return words.join(' ');
+    },
+    jellyColorName() {
+      switch (this.color.identifier) {
+        case 'darkorange':
+          return 'orange';
+        case 'orange':
+          return 'tangerine';
+        case 'lightblue':
+          return 'lightBlue';
+        case 'darkblue':
+          return 'navy';
+        case 'violet':
+          return 'grape';
+        case 'taupe':
+          return 'grayBrown';
+        case 'gray':
+          return 'grayGreen';
+        case 'darkgray':
+          return 'grayBlue';
+        default:
+          return this.color.name;
+      }
     },
   },
 };

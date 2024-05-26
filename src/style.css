@@ -1,4 +1,4 @@
-pre {
+code {
     background: #222222;
     color: #fafafa;
     margin: 1rem 0;
@@ -6,4 +6,67 @@ pre {
     border-radius: 0.5rem;
     border: 1px solid #333333;
     overflow: scroll;
+}
+
+code .keyword {
+    color: #fb8fff;
+}
+
+code .token {
+    color: #8fa9ff;
+}
+
+@media (min-width: 535px) {
+    .navbar {
+        height: 10rem !important;
+    }
+
+    .page-content {
+        padding-top: 6rem !important;
+    }
+}
+
+@media (max-width: 535px) and (min-width: 298px) {
+    .navbar {
+        height: 13rem !important;
+    }
+}
+
+@media (max-width: 298px) {
+    .navbar {
+        height: 15rem !important;
+    }
+}
+
+.navbar-inner {
+    align-items: baseline !important;
+}
+
+.toolbar-inner {
+    display: block !important;
+}
+
+/* Color Picker */
+
+.shortcut-icon-color-picker {
+    margin: .5rem 1rem 0;
+    text-align: center;
+}
+
+.shortcut-icon-color {
+    margin: .3rem;
+    display: inline-block;
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.shortcut-icon-color:hover {
+    filter: brightness(110%);
+}
+
+.shortcut-icon-color:active {
+    filter: brightness(90%);
 }
