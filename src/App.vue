@@ -77,23 +77,13 @@
                 target="_blank">
               {{ compiler.icon }} {{ name }}
             </f7-link>
-            <code class="width-100 display-block">
-              <template v-if="glyph.identifier">
-                <template v-if="name === 'Cherri'"><span class="keyword">#define</span> <span class="token">glyph</span>
-                  {{ glyph.identifier }}
-                </template>
-                <template v-if="name === 'Jelly'"><span class="keyword">#Icon</span>: {{ glyph.identifier }}</template>
-              </template>
-              <template v-if="color.identifier">
-                <template v-if="name === 'Cherri'"><br/><span class="keyword">#define</span> <span
-                    class="token">color</span> {{ color.identifier }}
-                </template>
-                <template v-if="name === 'Jelly'"><br/><span class="keyword">#Color</span>: {{ jellyColorName() }}
-                </template>
-              </template>
-            </code>
+            <code class="width-100 display-block" v-html="name === 'Cherri' ? cherriCode : jellyCode"/>
             <f7-button icon-f7="doc_on_clipboard_fill" icon-size="1.3rem"
-                       @click="copyToClipboard(compiler.code)"/>
+                       @click="copyToClipboard(
+                           stripTags(
+                               (name === 'Cherri' ? cherriCode : jellyCode).replace('<br/>', '\n')
+                           )
+                       )"/>
           </div>
         </f7-toolbar>
 
@@ -161,6 +151,7 @@ import {
   f7Toolbar,
   f7View,
 } from 'framework7-vue';
+import {computed} from 'vue';
 
 export default {
   name: 'App',
@@ -198,7 +189,7 @@ export default {
       glyphs: glyphs,
       glyph: {identifier: 'identifier', code: null},
       colors: colors,
-      color: {name: null, code: null},
+      color: {identifier: null, code: null},
       compilers: {
         'Cherri': {
           icon: '🍒',
@@ -209,6 +200,22 @@ export default {
           url: 'https://jellycuts.com/',
         },
       },
+      cherriCode: computed(() => {
+        let code = `<span class=keyword>#define</span> <span class=token>glyph</span> ${this.glyph.identifier}`;
+        if (this.color.identifier) {
+          code += `<br/><span class=keyword>#define</span> <span class=token>color</span> ${this.color.identifier}`;
+        }
+
+        return code;
+      }),
+      jellyCode: computed(() => {
+        let code = `<span class=keyword>#Icon</span>: ${this.glyph.identifier}`;
+        if (this.color.identifier) {
+          code += `<br/><span class=keyword>#Color</span>: ${this.jellyColorName()}`;
+        }
+
+        return code;
+      }),
       githubCredits: ['atnbueno', 'actuallytaylor', 'electrikmilk', 'chrisjmendez'],
     };
   },
@@ -232,6 +239,9 @@ export default {
         position: 'center',
         closeTimeout: 2000,
       }).open();
+    },
+    stripTags(str) {
+      return str.replace(/<\/?[^>]+(>|$)/gi, '');
     },
     iconClass(n) {
       let classes = {};
