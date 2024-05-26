@@ -210,7 +210,6 @@ export default {
         },
       },
       githubCredits: ['atnbueno', 'actuallytaylor', 'electrikmilk', 'chrisjmendez'],
-      groups: [],
     };
   },
   mounted() {
