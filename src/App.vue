@@ -57,9 +57,9 @@
           </f7-nav-title>
           <f7-subnavbar>
             <f7-searchbar search-container=".search-list"
+                          ref="searchbar"
                           class="searchbar"
                           :outline="false"
-                          placeholder="Find Glyphs"
                           search-in=".item-title">
             </f7-searchbar>
           </f7-subnavbar>
@@ -214,6 +214,11 @@ export default {
   },
   mounted() {
     this.blue = f7.colors['blue'];
+
+    const params = new URL(window.location.href).searchParams;
+    if (params.has('q')) {
+      this.$refs.searchbar.search(params.get('q'));
+    }
   },
   methods: {
     alert(text, title) {
