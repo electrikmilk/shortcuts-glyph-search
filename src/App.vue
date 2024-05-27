@@ -178,6 +178,9 @@ export default {
     f7Button,
     f7PageContent,
   },
+  setup() {
+    return {colors, glyphs};
+  },
   data() {
     return {
       blue: null,
@@ -186,9 +189,7 @@ export default {
         theme: 'ios',
         darkMode: 'auto',
       },
-      glyphs: glyphs,
       glyph: {identifier: 'identifier', code: null},
-      colors: colors,
       color: {identifier: null, code: null},
       compilers: {
         'Cherri': {
