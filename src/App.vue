@@ -65,8 +65,8 @@
           </f7-subnavbar>
         </f7-navbar>
 
-        <f7-toolbar position="bottom" style="font-size: .8rem"
-                    :style="!color.identifier ? 'height: 9rem' : 'height: 11rem'">
+        <f7-toolbar position="bottom"
+                    :style="!color.identifier ? 'height: 8rem' : 'height: 9rem'">
           <div v-for="(compiler, name) in compilers"
                class="width-100"
                style="display: flex;align-items: center;justify-content: center;gap: 1rem">
@@ -77,7 +77,7 @@
                 target="_blank">
               {{ compiler.icon }} {{ name }}
             </f7-link>
-            <code class="width-100 display-block" v-html="name === 'Cherri' ? cherriCode : jellyCode"/>
+            <code v-html="name === 'Cherri' ? cherriCode : jellyCode"/>
             <f7-button icon-f7="doc_on_clipboard_fill" icon-size="1.3rem"
                        @click="copyToClipboard(
                            stripTags(

@@ -6,6 +6,9 @@ code {
     border-radius: 0.5rem;
     border: 1px solid #333333;
     overflow: scroll;
+    display: block;
+    width: 100%;
+    font-size: .7rem;
 }
 
 code .keyword {
