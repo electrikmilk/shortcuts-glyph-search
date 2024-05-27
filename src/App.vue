@@ -211,7 +211,7 @@ export default {
       jellyCode: computed(() => {
         let code = `<span class=keyword>#Icon</span>: ${this.glyph.identifier}`;
         if (this.color.identifier) {
-          code += `<br/><span class=keyword>#Color</span>: ${this.jellyColorName()}`;
+          code += `, <span class=keyword>#Color</span>: ${this.jellyColorName()}`;
         }
 
         return code;
