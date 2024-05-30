@@ -56,6 +56,16 @@
               </div>
             </div>
           </f7-nav-title>
+
+          <f7-nav-right>
+            <f7-link href="https://github.com/electrikmilk/shortcuts-glyph-search"
+                     external
+                     tooltip="View Repo on GitHub"
+                     icon-f7="logo_github"
+                     target="_blank">
+            </f7-link>
+          </f7-nav-right>
+
           <f7-subnavbar>
             <f7-searchbar search-container=".search-list"
                           ref="searchbar"
