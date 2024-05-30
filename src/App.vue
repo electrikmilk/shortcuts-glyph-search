@@ -37,6 +37,7 @@
         <f7-navbar sliding class="text-align-center" style="padding-top: 5rem;height: 10rem">
           <f7-nav-left style="z-index: 999">
             <f7-link icon-f7="info_circle"
+                     tooltip="Credits"
                      popover-open=".credits"/>
           </f7-nav-left>
 
