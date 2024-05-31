@@ -7,28 +7,35 @@
           <f7-block>
             <h3>Credits ❤️</h3>
             <p>
-              Glyph data sourced from
-              <f7-link href="https://github.com/OpenJelly/Open-Jellycore"
-                       external
-                       target="_blank">
-                github.com/OpenJelly/Open-Jellycore
-              </f7-link>
+              Glyphs data
             </p>
+            <f7-link href="https://github.com/OpenJelly/Open-Jellycore"
+                     external
+                     icon-f7="logo_github"
+                     target="_blank">
+              &nbsp;
+              Open-Jellycore
+            </f7-link>
             <p>
-              Icons rendered using
-              <f7-link href="https://github.com/atnbueno/shortcut-icons"
-                       external
-                       target="_blank">
-                github.com/atnbueno/shortcut-icons
-              </f7-link>
+              Icons rendering
             </p>
+            <f7-link href="https://github.com/atnbueno/shortcut-icons"
+                     external
+                     icon-f7="logo_github"
+                     target="_blank">
+              &nbsp;
+              shortcut-icons
+            </f7-link>
           </f7-block>
           <f7-list dividers>
             <f7-list-item v-for="credit in githubCredits"
                           :link="'https://github.com/'+credit"
-                          target="_blank"
                           :style="'color:'+blue"
+                          target="_blank"
                           external>
+              <template #media>
+                <f7-icon f7="logo_github"></f7-icon>
+              </template>
               @{{ credit }}
             </f7-list-item>
           </f7-list>
