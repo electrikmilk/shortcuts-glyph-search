@@ -17,9 +17,7 @@ Jelly.
 
 ## Support the Glyphs List
 
-The identifiers are listed
-in [glyphs.json](https://github.com/electrikmilk/shortcuts-glyph-search/blob/main/src/assets/glyphs.json). You could use
-a [online JSON tool](https://onlinejsontools.com/extract-json-keys) to extract a list of keys for your application.
+The glyphs are listed in [glyphs.json](https://github.com/electrikmilk/shortcuts-glyph-search/blob/main/src/assets/glyphs.json).
 
 ## Dependencies
 
