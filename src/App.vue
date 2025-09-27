@@ -5,7 +5,7 @@
 
         <f7-popover class="credits">
           <f7-block>
-            <h3>Credits ❤️</h3>
+            <h3>Special Thanks ❤️</h3>
             <p>
               Glyphs data
             </p>
@@ -15,6 +15,14 @@
                      target="_blank">
               &nbsp;
               Open-Jellycore
+            </f7-link>
+            <f7-link href="https://github.com/electrikmilk/cherri"
+                     external
+                     icon-f7="logo_github"
+                     style="margin-left: 0.5rem"
+                     target="_blank">
+              &nbsp;
+              cherri
             </f7-link>
             <p>
               Icons rendering
@@ -27,6 +35,7 @@
               shortcut-icons
             </f7-link>
           </f7-block>
+          <f7-block-header>Credits</f7-block-header>
           <f7-list dividers>
             <f7-list-item v-for="credit in githubCredits"
                           :link="'https://github.com/'+credit"
@@ -34,9 +43,9 @@
                           target="_blank"
                           external>
               <template #media>
-                <f7-icon f7="logo_github"></f7-icon>
+                <f7-icon f7="at_circle_fill"></f7-icon>
               </template>
-              @{{ credit }}
+              {{ credit }}
             </f7-list-item>
           </f7-list>
         </f7-popover>
