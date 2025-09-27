@@ -105,8 +105,11 @@
                 target="_blank">
               {{ compiler.icon }} {{ name }}
             </f7-link>
-            <code v-html="name === 'Cherri' ? cherriCode : jellyCode"/>
-            <f7-button icon-f7="doc_on_clipboard_fill" icon-size="1.3rem"
+            <code v-if="name !== 'Jelly' || glyph.code < 62212" v-html="name === 'Cherri' ? cherriCode : jellyCode"/>
+            <small class="text-color-gray" v-else>This glyph has not yet been added to Jelly.</small>
+            <f7-button icon-f7="doc_on_clipboard_fill"
+                       icon-size="1.3rem"
+                       v-if="name !== 'Jelly' || glyph.code < 62212"
                        @click="copyToClipboard(
                            stripTags(
                                (name === 'Cherri' ? cherriCode : jellyCode).replace('<br/>', '\n')
