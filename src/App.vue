@@ -95,6 +95,7 @@
         <f7-toolbar position="bottom"
                     :style="!color.identifier ? 'height: 8rem' : 'height: 9rem'">
           <div v-for="(compiler, name) in compilers"
+               :key="name"
                class="width-100"
                style="display: flex;align-items: center;justify-content: center;gap: 1rem">
             <f7-link
